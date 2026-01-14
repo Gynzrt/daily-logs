@@ -93,3 +93,40 @@ print(f"Are logger1 and logger2 the same instance? {logger1 is logger2}")
 - **Solve Common Problems:** They provide tested solutions to recurring design challenges, saving development time.
 - **Improve Code Quality:** Lead to more organized, flexible, and maintainable codebases by promoting best practices.
 - **Shared Vocabulary:** Establish a common understanding among developers, simplifying communication about system design.
+
+============================================================
+
+*Generated: 2026-01-14 18:39:08 UTC*
+
+# Design patterns in Python
+
+## Overview
+Design patterns are reusable solutions to common software design problems, offering proven blueprints for building robust, maintainable, and scalable code. While Python's dynamic nature often allows for simpler, more idiomatic solutions, understanding classic patterns helps structure complex applications, improves communication among developers, and leverages best practices. They guide developers in creating flexible and extensible systems that are easier to understand and evolve.
+
+## Key Concepts
+Patterns are broadly categorized into **Creational** (object creation mechanisms, e.g., Factory Method, Singleton), **Structural** (composing classes and objects, e.g., Adapter, Decorator), and **Behavioral** (managing object interactions and responsibilities, e.g., Observer, Strategy). Python's features, like higher-order functions and decorators, provide elegant ways to implement many behavioral and structural patterns. For example, a Python module can implicitly serve as a Singleton by virtue of how modules are loaded.
+
+## Practical Example
+The **Decorator** pattern adds new functionality to an object or function without altering its core structure. Python provides built-in syntax (`@decorator`) for this, making it highly accessible:
+
+```python
+def log_execution(func):
+    def wrapper(*args, **kwargs):
+        print(f"Executing '{func.__name__}' with args: {args}")
+        result = func(*args, **kwargs)
+        return result
+    return wrapper
+
+@log_execution
+def greet(name):
+    """Returns a greeting for the given name."""
+    return f"Hello, {name}!"
+
+# Usage: greet("Alice") will print an execution message then return "Hello, Alice!"
+```
+
+## Key Takeaways
+- **Problem-Solving Framework**: Patterns offer tested solutions, saving development time and reducing errors for common design challenges.
+- **Improved Communication**: Provide a common vocabulary for discussing and documenting design choices within a team.
+- **Pythonic Adaptation**: Prioritize Python's idiomatic features (e.g., built-in decorators, context managers) over rigid adherence to classical patterns when a simpler solution exists.
+- **Don't Over-Engineer**: Apply patterns judiciously, only when they genuinely solve a recurring problem or significantly improve a system's flexibility and maintainability.
