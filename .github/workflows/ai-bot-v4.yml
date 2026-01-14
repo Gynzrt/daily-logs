@@ -1,0 +1,101 @@
+name: AI-Powered Bot v4.0 (Gemini)
+
+on:
+  schedule:
+    # Multiple times throughout the day for natural activity
+    - cron: '0 9 * * *'   # 09:00 UTC
+    - cron: '0 14 * * *'  # 14:00 UTC
+    - cron: '0 18 * * *'  # 18:00 UTC
+    - cron: '0 22 * * *'  # 22:00 UTC
+  workflow_dispatch:
+    # Allow manual trigger
+
+jobs:
+  ai-bot:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v4
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        fetch-depth: 0
+
+    - name: Setup Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.9'
+
+    - name: Install Dependencies
+      run: |
+        pip install google-generativeai
+
+    - name: Configure Git
+      run: |
+        git config --global user.name "Gynzrt"
+        git config --global user.email "Gynzrt@users.noreply.github.com"
+
+    - name: Random Delay (Natural Timing)
+      run: |
+        # Add random delay 0-30 minutes for natural behavior
+        DELAY=$((RANDOM % 1800))
+        echo "Waiting ${DELAY} seconds for natural timing..."
+        sleep $DELAY
+
+    - name: Run AI Bot v4.0
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: |
+        python ai_bot_v4.py
+
+    - name: Check Changes
+      id: check_changes
+      run: |
+        if [[ -n $(git status -s) ]]; then
+          echo "has_changes=true" >> $GITHUB_OUTPUT
+        else
+          echo "has_changes=false" >> $GITHUB_OUTPUT
+        fi
+
+    - name: Commit Changes
+      if: steps.check_changes.outputs.has_changes == 'true'
+      run: |
+        git add .
+
+        # Random commit message
+        MESSAGES=(
+          "Add AI-generated learning notes"
+          "Solve daily coding challenge"
+          "Update knowledge base with AI insights"
+          "Document new technical concepts"
+          "Add algorithm solution and analysis"
+          "Generate educational content"
+          "Update AI learning progress"
+          "Add coding challenge with explanation"
+        )
+
+        RANDOM_MSG=${MESSAGES[$RANDOM % ${#MESSAGES[@]}]}
+        TIMESTAMP=$(date -u +%Y%m%d_%H%M%S)
+
+        git commit -m "${RANDOM_MSG} - ${TIMESTAMP}" || echo "Nothing to commit"
+
+    - name: Push Changes
+      if: steps.check_changes.outputs.has_changes == 'true'
+      run: |
+        git push || echo "Push failed"
+
+    - name: Bot Report
+      run: |
+        echo "========================================"
+        echo "AI Bot v4.0 Report (Gemini Powered)"
+        echo "========================================"
+        echo "Status: Active"
+        echo "Time: $(date -u)"
+        echo "Repository: ${{ github.repository }}"
+        echo "Workflow: ${{ github.workflow }}"
+        echo "========================================"
+
+        if [ -f "bot_status.json" ]; then
+          echo "Bot Statistics:"
+          cat bot_status.json
+        fi

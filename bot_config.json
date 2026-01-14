@@ -1,21 +1,27 @@
 {
   "bot_name": "blogecoin Bot",
-  "version": "3.0",
-  "mode": "enhanced_autonomous",
+  "version": "4.0",
+  "mode": "ai_enhanced",
   "commits_per_day": {
     "min": 2,
     "max": 5
   },
+  "ai_features": {
+    "learning_notes": true,
+    "coding_challenges": true,
+    "smart_patterns": true
+  },
   "enabled": true,
-  "description": "Enhanced autonomous bot with natural behavior and diverse content",
+  "description": "AI-powered bot with Gemini for real content generation",
   "author": "blogecoin",
   "features": [
-    "Random commit timing (8 AM - 11 PM UTC)",
+    "Gemini AI content generation",
+    "Real learning notes with AI",
+    "Daily coding challenges with solutions",
+    "Smart activity patterns (weekday/weekend)",
+    "Random timing (8 AM - 11 PM UTC)",
     "Multiple commits per day (2-5)",
-    "Diverse content (quotes, notes, snippets)",
-    "Auto README stats updates",
-    "Multi-file commits",
-    "Natural activity patterns",
+    "Diverse educational content",
     "100% autonomous operation",
     "GitHub Actions powered"
   ]
