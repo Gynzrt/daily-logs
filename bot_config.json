@@ -1,20 +1,22 @@
 {
   "bot_name": "blogecoin Bot",
-  "version": "2.0",
-  "mode": "autonomous",
-  "log_format": "Autonomous update at {timestamp} UTC",
-  "commit_format": "autonomous update {timestamp}",
-  "timezone": "UTC",
+  "version": "3.0",
+  "mode": "enhanced_autonomous",
+  "commits_per_day": {
+    "min": 2,
+    "max": 5
+  },
   "enabled": true,
-  "description": "Fully independent GitHub Actions automation bot",
+  "description": "Enhanced autonomous bot with natural behavior and diverse content",
   "author": "blogecoin",
   "features": [
+    "Random commit timing (8 AM - 11 PM UTC)",
+    "Multiple commits per day (2-5)",
+    "Diverse content (quotes, notes, snippets)",
+    "Auto README stats updates",
+    "Multi-file commits",
+    "Natural activity patterns",
     "100% autonomous operation",
-    "No user intervention required",
-    "GitHub Actions powered",
-    "Daily UTC scheduling",
-    "Enhanced logging",
-    "Status monitoring",
-    "Error handling"
+    "GitHub Actions powered"
   ]
 }
