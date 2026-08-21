@@ -1,0 +1,31 @@
+{
+ "on_dinh": {
+  "san_pham": "pegbot",
+  "kenh": "on_dinh",
+  "phien_ban": "1.1.0",
+  "bat_buoc": false,
+  "luc": "2026-08-21 21:41:13",
+  "ghi_chu": "Ban thu nghiem co che cap nhat",
+  "tep": [
+   {
+    "ten": "PegBot.exe",
+    "bam": "d4710a8eb6107bfde32a5c294ad4c61ba743c9450b5aaa1034bf7449daf79431",
+    "kich_thuoc": 39078912,
+    "url": "http://127.0.0.1:52092/PegBot.exe"
+   },
+   {
+    "ten": "HUONG_DAN_CHO_KHACH.txt",
+    "bam": "aeead221c95a499db9e46127f7d82e58cbc141ebef335e3cd803cf757bee6cec",
+    "kich_thuoc": 19418,
+    "url": "http://127.0.0.1:52092/HUONG_DAN_CHO_KHACH.txt"
+   },
+   {
+    "ten": "CAI_DAT_LAN_DAU.bat",
+    "bam": "964fe7b49fa4cfacacf2954bc525ec82e4546b129c58de074e8381afa35d8183",
+    "kich_thuoc": 6011,
+    "url": "http://127.0.0.1:52092/CAI_DAT_LAN_DAU.bat"
+   }
+  ],
+  "chu_ky": "aU4XVNOekkFS7ojV5nNzc/Ar2OKOcHVnW/jXUE2wIDaFyA+nFh2mtkTIdBXC8aT2RULA2gUvwzPcXdTIO1xBCg=="
+ }
+}
